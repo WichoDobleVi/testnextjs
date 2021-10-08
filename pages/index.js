@@ -17,7 +17,7 @@ export default function Home(props) {
     )
 }
 
-export async function getServerSideProps(context) {
+/* export async function getServerSideProps(context) {
     console.log(context);
     const {mac, apmac} = context.query
     const apmac_ = apmac.replace(/:/g, '');
@@ -28,4 +28,4 @@ export async function getServerSideProps(context) {
             aps
         }
     }
-}
+} */
