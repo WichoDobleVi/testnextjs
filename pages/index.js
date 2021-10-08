@@ -1,9 +1,9 @@
 
-export default function Home(props) {
+export default function Home({ap}) {
 
     return (
         <div>
-            <h2>Home</h2>
+            <h2>{ap ? ap.ap_locationname : "URL not found"}</h2>
             <style jsx>
                 { `
                     h2 {
@@ -17,7 +17,7 @@ export default function Home(props) {
     )
 }
 
-/* export async function getServerSideProps(context) {
+export async function getServerSideProps(context) {
     console.log(context);
     const {mac, apmac} = context.query
     const apmac_ = apmac.replace(/:/g, '');
@@ -25,7 +25,7 @@ export default function Home(props) {
     const aps = await res.json();
     return {
         props: {
-            aps
-        }
+            ap: aps
+            
     }
-} */
+}
